@@ -44,10 +44,10 @@ export default function Home(props) {
           <DiscoverNewBookContainer />
           <CurrentlyReadingContainer />
           <ReviewOfTheDays />
+          <div className={imageBallClass}></div>
         </>
       )}
       <MobileMenu />
-      <div className={imageBallClass}></div>
     </div>
   );
 }

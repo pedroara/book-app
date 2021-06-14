@@ -10,9 +10,22 @@ export const fetchBook = (bookId, dispatch) => {
   });
 };
 
+export const getFetchMoreBooks = (values = {}, more, dispatch) => {
+  dispatch({ type: "BOOKS_FETCH_REQUESTED" });
+  apiGet(`/books/v1/volumes?q=${values}&maxResults=${more}`).then(
+    (response) => {
+      dispatch({
+        type: "BOOKS_FETCHED",
+        payload: response.body.items,
+      });
+    }
+  );
+};
+
 export const fetchBooks = (values = "", dispatch) => {
   dispatch({ type: "BOOKS_FETCH_REQUESTED" });
-  apiGet(`/books/v1/volumes?q=${values}`).then((response) => {
+  dispatch({ type: "SAVE_LAST_SEARCH", payload: values });
+  apiGet(`/books/v1/volumes?q=${values}}&maxResults=9`).then((response) => {
     dispatch({
       type: "BOOKS_FETCHED",
       payload: response.body.items,
