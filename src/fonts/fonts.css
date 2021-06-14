@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "SFProText";
+  src: local("SFProText"),
+    url(./SFProText/SFProText-Regular.ttf) format("truetype");
+}
+
+html,
+body {
+  font-family: SFProText;
+}
+
+@font-face {
+  font-family: "SFProTextBold";
+  src: local("SFProText"),
+    url(./SFProText/SFProText-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SFProTextMedium";
+  src: local("SFProText"),
+    url(./SFProText/SFProText-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: local("PlayfairDisplay"),
+    url(./PlayfairDisplay/PlayfairDisplay.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PlayfairDisplayBold";
+  src: local("PlayfairDisplay"),
+    url(./PlayfairDisplay/PlayfairDisplay-Bold.ttf) format("truetype");
+}
