@@ -2,7 +2,7 @@ import React from "react";
 import SearchFormContainer from "./SearchFormContainer";
 import { css } from "glamor";
 import BookResultsListContainer from "../books/BookResultsListContainer";
-import MobileMenu from "../menu/MobileMenu";
+import Menu from "../menu/Menu";
 import DiscoverNewBookContainer from "../discoverNewBook/DiscoverNewBookContainer";
 import CurrentlyReadingContainer from "../currentlyReading/CurrentlyReadingContainer";
 import ReviewOfTheDays from "../books/ReviewOfTheDays";
@@ -47,7 +47,7 @@ export default function Home(props) {
           <div className={imageBallClass}></div>
         </>
       )}
-      <MobileMenu />
+      <Menu />
     </div>
   );
 }

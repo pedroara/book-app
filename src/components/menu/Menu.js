@@ -19,6 +19,10 @@ const menuClass = css({
   display: "flex",
   justifyContent: "space-evenly",
 });
+const linkClass = css({
+  color: "#BFBEBF",
+  textDecoration: "none",
+});
 const menuItemClass = css({
   display: "flex",
   flexDirection: "column",
@@ -33,7 +37,7 @@ const menuItemClass = css({
 });
 const activeMenuItemClass = css({ ">p": { color: "#313131" } });
 
-export default function MobileMenu(props) {
+export default function Menu(props) {
   const currentPath = useSelector((state) => state.router.location.pathname);
 
   return (
@@ -47,25 +51,18 @@ export default function MobileMenu(props) {
         <img alt="home" src={homeIcon} height="16px" width="17.78px"></img>
         <p>Home</p>
       </div>
-      <div
-        className={css(
-          menuItemClass,
-          !!matchPath(currentPath, { path: "/libraries" }) &&
-            activeMenuItemClass
-        )}
-      >
-        <img alt="libraries" src={bookIcon} height="18px" width="14.4"></img>
-        <p>Libraries</p>
-      </div>
-      <div
-        className={css(
-          menuItemClass,
-          !!matchPath(currentPath, { path: "/profile" }) && activeMenuItemClass
-        )}
-      >
-        <img alt="user" src={userIcon} height="16" width="18"></img>
-        <p>User</p>
-      </div>
+      <a className={linkClass} href="https://books.google.com.br/">
+        <div className={menuItemClass}>
+          <img alt="libraries" src={bookIcon} height="18px" width="14.4"></img>
+          <p>Libraries</p>
+        </div>
+      </a>
+      <a className={linkClass} href="https://books.google.com.br/">
+        <div className={menuItemClass}>
+          <img alt="user" src={userIcon} height="16" width="18"></img>
+          <p>User</p>
+        </div>
+      </a>
     </div>
   );
 }
