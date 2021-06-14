@@ -27,29 +27,38 @@ const menuItemClass = css({
   alignItems: "center",
   justifyContent: "center",
   padding: "20px 22px",
-  "& + &": {
-    borderLeft: "1px solid rgba(151, 151, 151, 0.2)",
-  },
 });
 const iconClass = css({
   height: "16px",
   width: "16px",
   marginRight: "10px",
 });
+const lineClass = css({
+  marginTop: "auto",
+  marginBottom: "auto",
+  width: "1px",
+  backgroundColor: "rgba(151, 151, 151, 0.2)",
+  height: "20px",
+});
 
 export default function BookMenu(props) {
   const { book, readHandler } = props;
   return (
     <div className={container} onClick={readHandler}>
-      <a href={book?.acessInfo?.webReaderLink} target="_blank" rel="noreferrer">
-        <div className={menuItemClass}>
-          <img alt="read" className={iconClass} src={bookIcon}></img>Read
-        </div>
+      <a
+        className={menuItemClass}
+        href={book?.acessInfo?.webReaderLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img alt="read" className={iconClass} src={bookIcon}></img>Read
       </a>
+      <div className={lineClass}></div>
       <div className={menuItemClass}>
         <img alt="listen" className={iconClass} src={headphonesIcon}></img>
         Listen
       </div>
+      <div className={lineClass}></div>
       <div className={menuItemClass}>
         <img alt="share" className={iconClass} src={shareIcon}></img>Share
       </div>
